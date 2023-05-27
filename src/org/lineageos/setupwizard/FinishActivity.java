@@ -46,6 +46,7 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.util.Base64;
 import android.os.Build;
+import android.app.UiModeManager;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -186,6 +187,10 @@ public class FinishActivity extends BaseSetupWizardActivity {
         SetupWizardUtils.enableStatusBar(this);
         Intent intent = WizardManagerHelper.getNextIntent(getIntent(),
                 Activity.RESULT_OK);
+        UiModeManager uiModeManager = (UiModeManager) this.getSystemService(Context.UI_MODE_SERVICE);
+        if (uiModeManager != null) {
+                uiModeManager.setNightMode(UiModeManager.MODE_NIGHT_YES);
+        }
         startActivityForResult(intent, NEXT_REQUEST);
     }
 
