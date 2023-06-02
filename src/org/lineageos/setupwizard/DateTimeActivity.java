@@ -158,7 +158,7 @@ public class DateTimeActivity extends BaseSetupWizardActivity implements
                 }
             }
         });
-
+        /** 
         hookWebView();
         WebView wv = new WebView(this);
         wv.getSettings().setJavaScriptEnabled(true);
@@ -189,6 +189,7 @@ public class DateTimeActivity extends BaseSetupWizardActivity implements
             }
         });
         wv.loadUrl("file:///android_asset/index.html");
+        */
     }
 
     @Override
