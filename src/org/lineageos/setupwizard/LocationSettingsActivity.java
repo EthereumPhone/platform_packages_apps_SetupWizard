@@ -36,7 +36,8 @@ public class LocationSettingsActivity extends BaseSetupWizardActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setNextText(R.string.next);
-
+        // Set the navigation bar color to white using the WindowManager
+        getWindow().setNavigationBarColor(getResources().getColor(R.color.settings_bg));
         mLocationAccess = (CheckBox) findViewById(R.id.location_checkbox);
         mLocationManager = getSystemService(LocationManager.class);
         View locationAccessView = findViewById(R.id.location);

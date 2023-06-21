@@ -48,6 +48,8 @@ public abstract class SubBaseActivity extends BaseSetupWizardActivity {
         if (LOGV) {
             Log.d(TAG, "onCreate savedInstanceState=" + savedInstanceState);
         }
+        // Set the navigation bar color to white using the WindowManager
+        getWindow().setNavigationBarColor(getResources().getColor(R.color.settings_bg));
         super.onCreate(savedInstanceState);
         setNextAllowed(false);
         if (savedInstanceState == null) {

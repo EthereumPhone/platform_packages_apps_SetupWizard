@@ -42,6 +42,8 @@ public class SetupWizardActivity extends BaseSetupWizardActivity {
         if (LOGV) {
             Log.v(TAG, "onCreate savedInstanceState=" + savedInstanceState);
         }
+        // Set the navigation bar color to white using the WindowManager
+        getWindow().setNavigationBarColor(getResources().getColor(R.color.settings_bg));
         if (WizardManagerHelper.isUserSetupComplete(this)) {
             SetupWizardUtils.finishSetupWizard(this);
             finish();

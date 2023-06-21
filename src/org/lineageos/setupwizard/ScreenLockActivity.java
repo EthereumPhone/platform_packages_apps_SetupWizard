@@ -47,6 +47,8 @@ public class ScreenLockActivity extends SubBaseActivity {
             finish();
             return;
         }
+        // Set the navigation bar color to white using the WindowManager
+        getWindow().setNavigationBarColor(getResources().getColor(R.color.settings_bg));
         setNextAllowed(true);
     }
 
