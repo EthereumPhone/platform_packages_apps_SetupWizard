@@ -44,6 +44,8 @@ public class SetupWizardTestActivity extends Activity {
         if (LOGV) {
             Log.v(TAG, "onCreate savedInstanceState=" + savedInstanceState);
         }
+        // Set the navigation bar color to white using the WindowManager
+        getWindow().setNavigationBarColor(getResources().getColor(R.color.settings_bg));
         if (SetupWizardUtils.isOwner()) {
             Settings.Global.putInt(getContentResolver(), "device_provisioned", 0);
         }

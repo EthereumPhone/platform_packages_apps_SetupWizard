@@ -81,8 +81,8 @@
     <string name="lockscreen_setup_summary"><b>حماية هذا الجهاز</b> وطلب رقم تعريف شخصي أو نمط أو كلمة مرور لإلغاء قفل الشاشة.</string>
     <string name="lockscreen_setup_screen_lock_setup">إعداد</string>
     <string name="intro_restore_title">استعادة التطبيقات والبيانات</string>
-    <string name="intro_restore_subtitle" product="tablet">إذا كان لديك نسخة احتياطية من آخر جهاز لوحي بنظام GrapheneOS، يمكنك استعادتها هنا.</string>
-    <string name="intro_restore_subtitle" product="default">إذا كان لديك نسخة احتياطية من آخر هاتف بنظام GrapheneOS، يمكنك استعادتها هنا.</string>
+    <string name="intro_restore_subtitle" product="tablet">إذا كان لديك نسخة احتياطية من آخر جهاز لوحي بنظام ethOS، يمكنك استعادتها هنا.</string>
+    <string name="intro_restore_subtitle" product="default">إذا كان لديك نسخة احتياطية من آخر هاتف بنظام ethOS، يمكنك استعادتها هنا.</string>
     <string name="intro_restore_button">استعادة من نسخة احتياطية</string>
     <string name="update_recovery_title">تحديث وضع الاسترداد (recovery)</string>
     <string name="update_recovery_description">تحديث eth Recovery عند أول تشغيل بعد كل تحديث.</string>

@@ -46,6 +46,8 @@ public class SetupWizardExitActivity extends BaseSetupWizardActivity {
         if (LOGV) {
             Log.v(TAG, "onCreate savedInstanceState=" + savedInstanceState);
         }
+        // Set the navigation bar color to white using the WindowManager
+        getWindow().setNavigationBarColor(getResources().getColor(R.color.settings_bg));
         SetupWizardUtils.enableCaptivePortalDetection(this);
         PhoneMonitor.onSetupFinished();
         final Context context = this;

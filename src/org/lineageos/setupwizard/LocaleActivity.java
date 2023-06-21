@@ -79,6 +79,8 @@ public class LocaleActivity extends BaseSetupWizardActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         SystemBarHelper.setBackButtonVisible(getWindow(), true);
+        // Set the navigation bar color to white using the WindowManager
+        getWindow().setNavigationBarColor(getResources().getColor(R.color.settings_bg));
         setNextText(R.string.next);
         mLanguagePicker = (LocalePicker) findViewById(R.id.locale_list);
         loadLanguages();

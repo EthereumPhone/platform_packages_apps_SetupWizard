@@ -42,6 +42,8 @@ public class SimMissingActivity extends BaseSetupWizardActivity {
         if (!mPhoneMonitor.simMissing()) {
             finishAction(RESULT_OK);
         }
+        // Set the navigation bar color to white using the WindowManager
+        getWindow().setNavigationBarColor(getResources().getColor(R.color.settings_bg));
         final int simLocation = getResources().getInteger(
                 R.integer.sim_image_type);
         ImageView simLogo = ((ImageView) findViewById(R.id.sim_slot_image));
