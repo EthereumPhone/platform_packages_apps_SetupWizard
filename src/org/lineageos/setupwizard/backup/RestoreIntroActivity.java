@@ -37,6 +37,8 @@ public class RestoreIntroActivity extends SubBaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // Set the navigation bar color to white using the WindowManager
+        getWindow().setNavigationBarColor(getResources().getColor(R.color.settings_bg));
         final TextView restoreSubtitle = (TextView) findViewById(R.id.intro_restore_subtitle);
         restoreSubtitle.setText(getString(R.string.intro_restore_subtitle,
                 getString(R.string.os_name)));

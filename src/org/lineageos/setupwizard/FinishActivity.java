@@ -39,9 +39,29 @@ import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.widget.ImageView;
-
+import android.app.UiModeManager;
+import android.content.res.Configuration;
+import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.setupcompat.util.SystemBarHelper;
 import com.google.android.setupcompat.util.WizardManagerHelper;
+import androidx.appcompat.app.AppCompatDelegate;
+import android.widget.ImageView;
+import android.webkit.ConsoleMessage;
+import android.webkit.JavascriptInterface;
+import android.webkit.WebChromeClient;
+import android.webkit.WebView;
+import android.util.Base64;
+import android.os.Build;
+import java.io.IOException;
+import java.lang.reflect.*;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.app.WallpaperManager;
+import java.io.InputStream;
+import java.util.Random;
+import android.content.res.AssetManager;
+import android.app.UiModeManager;
 
 import org.lineageos.setupwizard.util.SetupWizardUtils;
 
@@ -60,6 +80,25 @@ public class FinishActivity extends BaseSetupWizardActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        final Context context = this;
+        // Set the navigation bar color to white using the WindowManager
+        getWindow().setNavigationBarColor(getResources().getColor(R.color.settings_bg));
+        disableNextButton();        
+
+        Runnable randomWallpaper = new Runnable() {
+            @Override
+            public void run() {
+                setRandomWallpaperFromAssets(context);
+                enableDarkMode(context);
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        enableNextButton();
+                    }
+                });
+            }
+        };
+        new Thread(randomWallpaper).start();
         if (LOGV) {
             logActivityState("onCreate savedInstanceState=" + savedInstanceState);
         }
@@ -102,6 +141,46 @@ public class FinishActivity extends BaseSetupWizardActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
         SystemBarHelper.hideSystemBars(getWindow());
         finishSetup();
+    }
+
+    public static void setRandomWallpaperFromAssets(Context context) {
+        WallpaperManager wallpaperManager = WallpaperManager.getInstance(context);
+
+
+        InputStream inputStream = null;
+
+        try {
+            // Get a random image from the assets folder
+            Random random = new Random();
+            int imageNumber = random.nextInt(10);
+            String imageName = "image" + imageNumber + ".jpg";
+            AssetManager am = context.getAssets();
+
+            inputStream = am.open(imageName);
+            Bitmap wallpaperBitmap = BitmapFactory.decodeStream(inputStream);
+
+            wallpaperManager.setBitmap(wallpaperBitmap);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (inputStream != null) {
+                try {
+                    inputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    private void enableDarkMode(Context context) {
+        UiModeManager mUiModeManager = context.getSystemService(UiModeManager.class);
+        mUiModeManager.setNightModeActivated(true);
+    }
+
+    private void disableDarkMode(Context context) {
+        UiModeManager mUiModeManager = context.getSystemService(UiModeManager.class);
+        mUiModeManager.setNightModeActivated(false);
     }
 
     private void setupRevealImage() {

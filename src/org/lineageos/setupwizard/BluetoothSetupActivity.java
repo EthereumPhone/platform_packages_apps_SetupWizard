@@ -36,6 +36,8 @@ public class BluetoothSetupActivity extends WrapperSubBaseActivity {
     @Override
     protected void onStartSubactivity() {
         try {
+            // Set the navigation bar color to white using the WindowManager
+            getWindow().setNavigationBarColor(getResources().getColor(R.color.settings_bg));
             Intent intent = new Intent();
             intent.setComponent(SetupWizardUtils.sTvAddAccessorySettingsActivity);
             intent.setAction(ACTION_CONNECT_INPUT);
