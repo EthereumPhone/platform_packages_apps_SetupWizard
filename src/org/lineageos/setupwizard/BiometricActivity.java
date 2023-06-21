@@ -38,6 +38,8 @@ public class BiometricActivity extends SubBaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // Set the navigation bar color to white using the WindowManager
+        getWindow().setNavigationBarColor(getResources().getColor(R.color.settings_bg));
         final TextView setupBiometricSummary = (TextView) findViewById(
                 R.id.setup_biometric_summary);
         final TextView setupAddBiometric = (TextView) findViewById(R.id.setup_add_biometric);

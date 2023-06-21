@@ -32,6 +32,8 @@ public class WelcomeActivity extends BaseSetupWizardActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // Set the navigation bar color to white using the Window
+        getWindow().setNavigationBarColor(getResources().getColor(R.color.settings_bg));
         SystemBarHelper.setBackButtonVisible(getWindow(), false);
         mRootView = findViewById(R.id.setup_wizard_layout);
         setNextText(R.string.start);

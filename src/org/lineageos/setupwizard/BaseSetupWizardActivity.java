@@ -261,6 +261,20 @@ public abstract class BaseSetupWizardActivity extends Activity implements Naviga
         }
     }
 
+    public void disableNextButton() {
+        if (mNavigationBar != null) {
+            final Button next = mNavigationBar.getNextButton();
+            next.setEnabled(false);
+        }
+    }
+
+    public void enableNextButton() {
+        if (mNavigationBar != null) {
+            final Button next = mNavigationBar.getNextButton();
+            next.setEnabled(true);
+        }
+    }
+
     protected Intent getResultData() {
         return null;
     }

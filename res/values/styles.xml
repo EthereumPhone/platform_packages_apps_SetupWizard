@@ -42,4 +42,9 @@
     </style>
 
     <style name="NoDisplay" parent="@android:style/Theme.NoDisplay" />
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:navigationBarColor">#eff1f2</item>
+    </style>
+
 </resources>
