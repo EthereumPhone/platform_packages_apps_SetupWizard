@@ -41,7 +41,7 @@
                android:layout_width="match_parent"
                android:layout_height="0dp"
                android:layout_weight="1"
-               style="@style/SudContentFrame"/>
+               style="@style/ethOSFrame"/>
 
           <com.google.android.setupdesign.view.NavigationBar
                android:id="@+id/navigation_bar"
