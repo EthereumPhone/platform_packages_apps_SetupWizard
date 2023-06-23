@@ -23,7 +23,8 @@
               android:paddingLeft="@dimen/content_margin_left"
               android:paddingRight="@dimen/data_switch_margin_right"
               android:background="?android:attr/selectableItemBackground"
-              android:clickable="true">
+              android:clickable="true"
+    style="@style/ethOSFrame">
 
     <ImageView
         android:id="@+id/signal"
@@ -37,6 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:textSize="14sp"
+        android:textColor="#FFFFFF"
         android:layout_marginLeft="@dimen/carrier_text_margin_left"
         android:maxLines="4" />
 

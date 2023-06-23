@@ -19,7 +19,7 @@
     <style name="SpinnerItem">
         <item name="android:textSize">15sp</item>
         <item name="android:textColor">#FFFFFF</item>
-        <item name="android:paddingLeft">@dimen/content_margin_left</item>
+        <item name="android:padding">@dimen/content_margin_left</item>
     </style>
 
     <style name="LocaleWidget">
@@ -29,6 +29,7 @@
     <style name="LocaleWidget.LocalePicker">
         <item name="android:orientation">vertical</item>
         <item name="android:fadingEdge">vertical</item>
+        <item name="android:textColor">#FFFFFF</item>
         <item name="android:fadingEdgeLength">50dip</item>
     </style>
 
@@ -39,6 +40,7 @@
         <item name="internalLayout">@layout/locale_picker</item>
         <item name="internalMinWidth">64dip</item>
         <item name="internalMaxHeight">180dip</item>
+        <item name="android:textColor">#FFFFFF</item>
         <item name="virtualButtonPressedDrawable">@null</item>
     </style>
 
@@ -76,10 +78,12 @@
     <style name="ethOSItemContainer">
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:fontFamily">@font/inter_regular_font"</item>
+        <item name="android:padding">32dp</item>
     </style>
 
     <style name="ethOSItemDescription">
         <item name="android:textColor">#FFFFFF</item>
+        <item name="android:padding">32dp</item>
         <item name="android:fontFamily">@font/inter_regular_font"</item>
     </style>
 
@@ -91,6 +95,12 @@
     <style name="SudNavBarTheme">
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:fontFamily">@font/inter_regular_font"</item>
+    </style>
+
+    <style name="ethOSCheckbox" parent="@style/Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:colorControlNormal">#FFFFFF</item>
+        <item name="android:colorControlActivated">#3db5ea</item>
+        <item name="android:colorControlHighlight">#3db5ea</item>
     </style>
 
 

@@ -22,12 +22,14 @@
         android:paddingStart="16dp"
         android:paddingTop="6dp"
         android:paddingBottom="6dp"
-        android:paddingEnd="16dp">
+        android:paddingEnd="16dp"
+    >
 
     <TextView
         android:id="@+id/locale"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="left"
+        android:textColor="#FFFFFF"
         android:textAppearance="?android:attr/textAppearanceMedium"/>
 </LinearLayout>

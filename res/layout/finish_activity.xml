@@ -23,14 +23,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:background="#1E2730"
+    style="@style/ethOSFrame"
     app:insetForeground="@android:color/transparent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        style="@style/ethOSFrame">
+        >
 
         <ImageView
             android:id="@+id/brand_logo"
@@ -55,6 +55,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/reveal"
+        style="@style/ethOSFrame"
         android:visibility="invisible"/>
 
 </org.lineageos.setupwizard.widget.ScrimInsetsFrameLayout>
