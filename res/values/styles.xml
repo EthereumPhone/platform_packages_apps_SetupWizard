@@ -92,15 +92,20 @@
         <item name="android:fontFamily">@font/inter_regular_font"</item>
     </style>
 
-    <style name="SudNavBarTheme">
+    <style name="ethOSNavBarTheme">
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:fontFamily">@font/inter_regular_font"</item>
     </style>
 
     <style name="ethOSCheckbox" parent="@style/Widget.AppCompat.CompoundButton.CheckBox">
         <item name="android:colorControlNormal">#FFFFFF</item>
-        <item name="android:colorControlActivated">#3db5ea</item>
-        <item name="android:colorControlHighlight">#3db5ea</item>
+        <item name="android:colorControlActivated">#FFFFFF</item>
+        <item name="android:colorControlHighlight">#FFFFFF</item>
+    </style>
+
+    <style name="ethOSCheckboxMultiline">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:fontFamily">@font/inter_regular_font"</item>
     </style>
 
 
