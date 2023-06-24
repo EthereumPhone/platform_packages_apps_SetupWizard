@@ -23,7 +23,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    style="@style/ethOSFrame"
+    style="@style/SudContentFrame"
     app:insetForeground="@android:color/transparent">
 
     <LinearLayout
@@ -55,7 +55,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/reveal"
-        style="@style/ethOSFrame"
+        style="@style/SudContentFrame"
         android:visibility="invisible"/>
 
 </org.lineageos.setupwizard.widget.ScrimInsetsFrameLayout>

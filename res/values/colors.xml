@@ -16,24 +16,24 @@
      limitations under the License.
 -->
 <resources>
-    <color name="black">#21272b</color>
-    <color name="white">#eff1f2</color>
-    <color name="settings_bg">#eff1f2</color>
-    <color name="page_background">#202124</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="settings_bg">#24303D</color>
+    <color name="page_background">#24303D</color>
 
     <color name="primary">@color/page_background</color>
-    <color name="primary_dark">#eff1f2</color>
+    <color name="primary_dark">#1E2730</color>
     <color name="accent">#FF24303D</color>
-    <color name="primary_text">#8a000000</color>
+    <color name="primary_text">#ffffff</color>
     <color name="secondary_text">#42000000</color>
     <color name="button_bar_text_enabled">#ff1e1e1e</color>
     <color name="button_bar_text_disabled">#321e1e1e</color>
-    <color name="divider">#40000000</color>
+    <color name="divider">#9FA2A5</color>
     <color name="header_bg">@color/primary</color>
     <color name="header_condensed_bg">@color/primary</color>
     <color name="button_bar_background">@color/primary</color>
-    <color name="biometric_setup_text_color">#FF24303D</color>
+    <color name="biometric_setup_text_color">#3C4958</color>
     <!-- Partner customization -->
-    <color name="sud_glif_background_color_light">#eff1f2</color>
+    <color name="sud_glif_background_color_light">#24303D</color>
     <color name="sud_color_accent_glif_v3_light">@color/accent</color>
 </resources>
