@@ -62,6 +62,7 @@ import com.google.android.setupdesign.GlifLayout;
 import org.lineageos.setupwizard.NavigationLayout.NavigationBarListener;
 import org.lineageos.setupwizard.util.SetupWizardUtils;
 
+import java.awt.Color;
 import java.util.List;
 
 public abstract class BaseSetupWizardActivity extends Activity implements NavigationBarListener {
@@ -647,13 +648,24 @@ public abstract class BaseSetupWizardActivity extends Activity implements Naviga
         }
         if (getTitleResId() != -1) {
             final CharSequence headerText = TextUtils.expandTemplate(getText(getTitleResId()));
-            getGlifLayout().setHeaderText(headerText);
+
+            //change text color of header
+            SpannableString spannableString = new SpannableString(headerText);
+            spannableString.setSpan(new ForegroundColorSpan(Color.WHITE), 0, text.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            CharSequence newText = (CharSequence) spannableString.toString();
+            //set text
+            getGlifLayout().setHeaderText(newText);
         }
         if (getIconResId() != -1) {
             final GlifLayout layout = getGlifLayout();
             final Drawable icon = getDrawable(getIconResId()).mutate();
             icon.setTintList(Utils.getColorAccent(layout.getContext()));
-            layout.setIcon(icon);
+
+            //change icon color
+            Drawable newDrawable = DrawableCompat.wrap(icon);
+            DrawableCompat.setTint(wrappedDrawable, Color.WHITE);
+
+            layout.setIcon(newDrawable);
         }
     }
 
