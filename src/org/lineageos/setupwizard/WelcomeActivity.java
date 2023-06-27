@@ -20,6 +20,9 @@ package org.lineageos.setupwizard;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Display;
+import android.hardware.display.DisplayManager;
+import android.provider.Settings;
 
 import com.google.android.setupcompat.util.SystemBarHelper;
 
@@ -27,11 +30,25 @@ public class WelcomeActivity extends BaseSetupWizardActivity {
 
     public static final String TAG = WelcomeActivity.class.getSimpleName();
 
+    private static final float DEFAULT_REFRESH_RATE = 60f;
+
     private View mRootView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Setting to peak refresh rate
+        final DisplayManager dm = this.getSystemService(DisplayManager.class);
+        final Display display = dm.getDisplay(Display.DEFAULT_DISPLAY);
+        float peakRefreshRate = DEFAULT_REFRESH_RATE;
+        if (display == null) {
+            System.out.println(TAG+": No valid default display device");
+        } else {
+            peakRefreshRate = findPeakRefreshRate(display.getSupportedModes());
+        }
+        Settings.System.putFloat(this.getContentResolver(), Settings.System.PEAK_REFRESH_RATE, peakRefreshRate);
+        System.out.println(TAG+" Setting display refresh rate to " + peakRefreshRate);
         // Set the navigation bar color to white using the Window
         getWindow().setNavigationBarColor(getResources().getColor(R.color.settings_bg));
         SystemBarHelper.setBackButtonVisible(getWindow(), false);
@@ -43,6 +60,16 @@ public class WelcomeActivity extends BaseSetupWizardActivity {
                 .setOnClickListener(view -> startEmergencyDialer());
         findViewById(R.id.launch_accessibility)
                 .setOnClickListener(view -> startAccessibilitySettings());
+    }
+
+    float findPeakRefreshRate(Display.Mode[] modes) {
+        float peakRefreshRate = DEFAULT_REFRESH_RATE;
+        for (Display.Mode mode : modes) {
+            if (Math.round(mode.getRefreshRate()) > peakRefreshRate) {
+                peakRefreshRate = mode.getRefreshRate();
+            }
+        }
+        return peakRefreshRate;
     }
 
     @Override
