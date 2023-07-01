@@ -27,6 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="16dip"
+        android:textColor="@color/white"
         style="@style/SpinnerItem" />
 
     <TextView
@@ -34,6 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="10dip"
+        android:textColor="@color/white"
         android:layout_below="@android:id/text1"
         android:layout_alignStart="@android:id/text1"
         android:fontFamily="sans-serif-medium"

@@ -45,6 +45,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:id="@+id/sim_missing"
+                    android:textColor="@color/white"
                     android:text="@string/sim_missing_summary"
                     style="@style/ethOSItemDescription" />
 
@@ -54,6 +55,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:scaleType="fitEnd"
+                    android:tint="@color/white"
                     android:src="@drawable/sim" />
 
             </LinearLayout>

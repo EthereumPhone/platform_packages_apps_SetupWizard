@@ -45,6 +45,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/sim_missing"
                     android:text="@string/sim_missing_summary"
+                    android:textColor="@color/white"
                     style="@style/SudItemTitle.GlifDescription" />
 
                 <ImageView
@@ -53,6 +54,7 @@
                     android:layout_height="0px"
                     android:layout_weight="1"
                     android:scaleType="fitEnd"
+                    android:tint="@color/white"
                     android:src="@drawable/sim"/>
 
             </LinearLayout>
