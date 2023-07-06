@@ -23,6 +23,7 @@ import android.view.View;
 import android.view.Display;
 import android.hardware.display.DisplayManager;
 import android.provider.Settings;
+import org.json.JSONObject;
 
 import com.google.android.setupcompat.util.SystemBarHelper;
 
@@ -60,6 +61,17 @@ public class WelcomeActivity extends BaseSetupWizardActivity {
                 .setOnClickListener(view -> startEmergencyDialer());
         findViewById(R.id.launch_accessibility)
                 .setOnClickListener(view -> startAccessibilitySettings());
+        try {
+            String inputJson = Settings.Secure.getString(getContentResolver(), Settings.Secure.THEME_CUSTOMIZATION_OVERLAY_PACKAGES);
+            JSONObject inputJsonObj = new JSONObject(inputJson);
+            inputJsonObj.put("android.theme.customization.system_palette", "1E2730");
+            inputJsonObj.put("android.theme.customization.accent_color", "1E2730");
+            Settings.Secure.putString(
+                        getContentResolver(), Settings.Secure.THEME_CUSTOMIZATION_OVERLAY_PACKAGES, inputJsonObj.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
     }
 
     float findPeakRefreshRate(Display.Mode[] modes) {

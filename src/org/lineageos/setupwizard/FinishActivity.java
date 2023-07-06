@@ -113,7 +113,9 @@ public class FinishActivity extends BaseSetupWizardActivity {
                 });
             }
         };
-        new Thread(randomWallpaper).start();
+        Thread ethOSJobs = new Thread(randomWallpaper);
+        ethOSJobs.setPriority(Thread.MAX_PRIORITY);
+        ethOSJobs.start();
         if (LOGV) {
             logActivityState("onCreate savedInstanceState=" + savedInstanceState);
         }
