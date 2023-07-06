@@ -62,8 +62,11 @@ import com.google.android.setupdesign.GlifLayout;
 import org.lineageos.setupwizard.NavigationLayout.NavigationBarListener;
 import org.lineageos.setupwizard.util.SetupWizardUtils;
 
-import java.awt.Color;
 import java.util.List;
+import android.graphics.Color;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
+import android.text.Spannable;
 
 public abstract class BaseSetupWizardActivity extends Activity implements NavigationBarListener {
 
