@@ -124,6 +124,21 @@
             </intent-filter>
         </activity>
 
+        <!-- ETHOS_WALLET -->
+
+        <activity android:name=".EthOSWalletActivity"
+                  android:label="@string/activity_label_empty"
+                  android:excludeFromRecents="true"
+                  android:configChanges="mcc|mnc"
+                  android:immersive="true"
+                  android:exported="false"
+                  android:windowSoftInputMode="stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="org.lineageos.setupwizard.ETHOS_WALLET" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
         <activity android:name=".LocaleActivity"
                   android:label="@string/activity_label_empty"
                   android:excludeFromRecents="true"
