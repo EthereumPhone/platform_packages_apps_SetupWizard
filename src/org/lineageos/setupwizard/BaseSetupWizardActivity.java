@@ -67,6 +67,8 @@ import android.graphics.Color;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.text.Spannable;
+import androidx.core.content.ContextCompat.getColor;
+
 
 public abstract class BaseSetupWizardActivity extends Activity implements NavigationBarListener {
 
@@ -94,6 +96,7 @@ public abstract class BaseSetupWizardActivity extends Activity implements Naviga
     private boolean mIsPrimaryUser;
     protected int mResultCode = 0;
     private Intent mResultData;
+
 
     private final BroadcastReceiver finishReceiver = new BroadcastReceiver() {
         @Override
@@ -651,24 +654,31 @@ public abstract class BaseSetupWizardActivity extends Activity implements Naviga
         }
         if (getTitleResId() != -1) {
             final CharSequence headerText = TextUtils.expandTemplate(getText(getTitleResId()));
+            // change color
+            Context context = getContext();
+            int[][] states = new int[][] {
+                    new int[] { android.R.attr.state_enabled }, // enabled state
+                    new int[] { -android.R.attr.state_enabled }, // disabled state
+                    // Add more states if needed
+            };
 
-            //change text color of header
-            SpannableString spannableString = new SpannableString(headerText);
-            spannableString.setSpan(new ForegroundColorSpan(Color.WHITE), 0, text.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            CharSequence newText = (CharSequence) spannableString.toString();
-            //set text
-            getGlifLayout().setHeaderText(newText);
+            int[] colors = new int[] {
+                    ContextCompat.getColor(context, R.color.white), // Replace "enabled_color" with your enabled color resource
+                    ContextCompat.getColor(context, R.color.white), // Replace "disabled_color" with your disabled color resource
+                    // Add more colors corresponding to the states
+            };
+
+            ColorStateList colorStateList = new ColorStateList(states, colors);
+
+            getGlifLayout().setHeaderText(headerText);
+            getGlifLayout().setHeaderColor(states,colors);
         }
         if (getIconResId() != -1) {
             final GlifLayout layout = getGlifLayout();
             final Drawable icon = getDrawable(getIconResId()).mutate();
             icon.setTintList(Utils.getColorAccent(layout.getContext()));
-
-            //change icon color
-            Drawable newDrawable = DrawableCompat.wrap(icon);
-            DrawableCompat.setTint(wrappedDrawable, Color.WHITE);
-
-            layout.setIcon(newDrawable);
+            icon.setTint(R.color.white);
+            layout.setIcon(icon);
         }
     }
 
