@@ -655,23 +655,8 @@ public abstract class BaseSetupWizardActivity extends Activity implements Naviga
         if (getTitleResId() != -1) {
             final CharSequence headerText = TextUtils.expandTemplate(getText(getTitleResId()));
             // change color
-            Context context = getContext();
-            int[][] states = new int[][] {
-                    new int[] { android.R.attr.state_enabled }, // enabled state
-                    new int[] { -android.R.attr.state_enabled }, // disabled state
-                    // Add more states if needed
-            };
-
-            int[] colors = new int[] {
-                    ContextCompat.getColor(context, R.color.white), // Replace "enabled_color" with your enabled color resource
-                    ContextCompat.getColor(context, R.color.white), // Replace "disabled_color" with your disabled color resource
-                    // Add more colors corresponding to the states
-            };
-
-            ColorStateList colorStateList = new ColorStateList(states, colors);
 
             getGlifLayout().setHeaderText(headerText);
-            getGlifLayout().setHeaderColor(states,colors);
         }
         if (getIconResId() != -1) {
             final GlifLayout layout = getGlifLayout();
