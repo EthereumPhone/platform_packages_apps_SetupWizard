@@ -25,8 +25,13 @@
     </WizardAction>
 
     <WizardAction wizard:uri="intent:#Intent;action=org.lineageos.setupwizard.LINEAGE_WELCOME;end" id="welcome">
+        <result wizard:action="walletsetup" />
+    </WizardAction>
+
+    <WizardAction wizard:uri="intent:#Intent;action=org.lineageos.setupwizard.ETHOS_WALLET;end" id="walletsetup">
         <result wizard:action="locale" />
     </WizardAction>
+
     <WizardAction wizard:uri="intent:#Intent;action=org.lineageos.setupwizard.LINEAGE_LOCALE;end" id="locale">
         <result wizard:action="datetime" />
     </WizardAction>
