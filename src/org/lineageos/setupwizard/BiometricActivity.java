@@ -25,9 +25,12 @@ import static org.lineageos.setupwizard.SetupWizardApp.REQUEST_CODE_SETUP_BIOMET
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.graphics.Color;
+
 
 import com.google.android.setupcompat.util.WizardManagerHelper;
 import com.google.android.setupdesign.util.ThemeHelper;
+
 
 import org.lineageos.setupwizard.util.SetupWizardUtils;
 
