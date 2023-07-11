@@ -16,7 +16,7 @@
      limitations under the License.
 -->
 <resources>
-    <color name="black">#000000</color>
+    <color name="black">#ffffff</color>
     <color name="white">#ffffff</color>
     <color name="settings_bg">#1E2730</color>
     <color name="page_background">#1E2730</color>

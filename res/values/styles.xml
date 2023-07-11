@@ -19,7 +19,7 @@
     <style name="SpinnerItem">
         <item name="android:textSize">15sp</item>
         <item name="android:textColor">#FFFFFF</item>
-        <item name="android:padding">@dimen/content_margin_left</item>
+        <item name="android:paddingLeft">@dimen/content_margin_left</item>
     </style>
 
     <style name="LocaleWidget">

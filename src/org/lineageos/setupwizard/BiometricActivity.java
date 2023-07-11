@@ -48,14 +48,14 @@ public class BiometricActivity extends SubBaseActivity {
         final TextView setupAddBiometric = (TextView) findViewById(R.id.setup_add_biometric);
         if (SetupWizardUtils.hasFace(this)) {
             setupBiometricSummary.setText(getString(R.string.face_setup_summary));
-            setupBiometricSummary.setTextColor(R.color.white);
+            setupBiometricSummary.setTextColor(getResources().getColor(R.color.white));
             setupAddBiometric.setText(R.string.face_setup_add_face);
-            setupAddBiometric.setTextColor(R.color.white);
+            setupAddBiometric.setTextColor(getResources().getColor(R.color.white));
         } else {
             setupBiometricSummary.setText(getString(R.string.fingerprint_setup_summary));
-            setupBiometricSummary.setTextColor(R.color.white);
+            setupBiometricSummary.setTextColor(getResources().getColor(R.color.white));
             setupAddBiometric.setText(R.string.fingerprint_setup_add_fingerprint);
-            setupAddBiometric.setTextColor(R.color.white);
+            setupAddBiometric.setTextColor(getResources().getColor(R.color.white));
         }
     }
 

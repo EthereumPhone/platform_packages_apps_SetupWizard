@@ -661,8 +661,7 @@ public abstract class BaseSetupWizardActivity extends Activity implements Naviga
         if (getIconResId() != -1) {
             final GlifLayout layout = getGlifLayout();
             final Drawable icon = getDrawable(getIconResId()).mutate();
-            icon.setTintList(Utils.getColorAccent(layout.getContext()));
-            icon.setTint(R.color.white);
+            icon.setTint(getResources().getColor(R.color.white));
             layout.setIcon(icon);
         }
     }
