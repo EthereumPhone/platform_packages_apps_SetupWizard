@@ -31,6 +31,18 @@
         <item name="android:fadingEdgeLength">50dip</item>
     </style>
 
+    <style name="ethOSButton">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:capitalize">characters</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:textSize">8pt</item>
+        <item name="android:background">@drawable/rounded_corners_primary</item>
+        <item name="android:text">Start</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">#FF1E2730</item>
+    </style>
+
     <style name="LocaleWidget.Material.LocalePicker" parent="LocaleWidget.LocalePicker">
         <item name="solidColor">@android:color/transparent</item>
         <item name="selectionDivider">@drawable/divider</item>
