@@ -21,16 +21,16 @@
             <!-- Input Field -->
             <EditText
                 android:id="@+id/wallet_input"
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:hint="@string/wallet_input_hint"
-                android:backgroundTint="@color/white"
                 android:inputType="text"
                 android:maxLength="64"
-                android:textColorHint="@color/secondary_text"
                 android:maxLines="1"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                style="@style/ethOSTextfield"
+                android:layout_marginBottom="16dp" />
 
             <!-- Text that says "Or" -->
             <TextView
@@ -47,13 +47,13 @@
             <!-- Button that says generate new wallet -->
             <Button
                 android:id="@+id/generate_wallet_button"
-                android:layout_width="wrap_content"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/or_text"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="16dp"
                 android:text="@string/generate_wallet_button"
-                style="@style/SudGlifButton.Primary" />
+                style="@style/ethOSButton" />
 
             <ProgressBar
                 android:id="@+id/loading_spinner"
