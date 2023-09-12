@@ -47,7 +47,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/intro_restore_subtitle"
-                        style="@style/SudItemTitle.GlifDescription" />
+                        style="@style/SudItemTitle.GlifDescription"
+                        android:textColor="@color/white" />
 
                 </LinearLayout>
             </ScrollView>

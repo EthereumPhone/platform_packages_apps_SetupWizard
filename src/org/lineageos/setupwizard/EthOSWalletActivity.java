@@ -27,7 +27,7 @@ public class EthOSWalletActivity extends BaseSetupWizardActivity {
         super.onCreate(savedInstanceState);
         // Set the navigation bar color to white using the Window
         getWindow().setNavigationBarColor(getResources().getColor(R.color.settings_bg));
-        setNextAllowed(false);
+        makeNextButtonInvisible();
         findViewById(R.id.generate_wallet_button).setOnClickListener(view -> generateNewWallet());
         walletInput = findViewById(R.id.wallet_input);
         walletInput.addTextChangedListener(new TextWatcher() {
@@ -36,9 +36,9 @@ public class EthOSWalletActivity extends BaseSetupWizardActivity {
                 String wallet = s.toString();
                 // Check if its a valid ethereum private key
                 if (wallet.length() == 64) {
-                    setNextAllowed(true);
+                    makeNextButtonVisible();
                 } else {
-                    setNextAllowed(false);
+                    makeNextButtonInvisible();
                 }
             }
 
