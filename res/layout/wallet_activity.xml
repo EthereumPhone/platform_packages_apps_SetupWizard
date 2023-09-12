@@ -30,7 +30,7 @@
                 android:maxLines="1"
                 android:textSize="24sp"
                 style="@style/ethOSTextfield"
-                android:layout_marginBottom="16dp" />
+                 />
 
             <!-- Text that says "Or" -->
             <TextView
@@ -40,9 +40,10 @@
                 android:layout_below="@id/wallet_input"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
                 android:textColor="@color/white"
                 android:text="@string/or_text"
-                android:textSize="18sp" />
+                android:textSize="32sp" />
 
             <!-- Button that says generate new wallet -->
             <Button
@@ -51,7 +52,6 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/or_text"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="16dp"
                 android:text="@string/generate_wallet_button"
                 style="@style/ethOSButton" />
 
