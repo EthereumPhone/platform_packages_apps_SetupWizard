@@ -39,6 +39,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+<<<<<<< Updated upstream
                 <ImageView
                     android:id="@+id/brand_logo"
                     android:layout_width="match_parent"
@@ -67,6 +68,21 @@
                     app:layout_constraintTop_toBottomOf="@+id/brand_logo"
                     app:layout_constraintVertical_bias="0.84000003" />
             </androidx.constraintlayout.widget.ConstraintLayout>
+=======
+            <Button
+                android:id="@+id/start"
+                style="@style/ethOSButton"
+                android:layout_width="256dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:text="Start"
+                app:backgroundTint="@null"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/brand_logo" />
+>>>>>>> Stashed changes
 
         </LinearLayout>
 

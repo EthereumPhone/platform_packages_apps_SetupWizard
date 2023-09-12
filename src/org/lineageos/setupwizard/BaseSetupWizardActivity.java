@@ -634,6 +634,7 @@ public abstract class BaseSetupWizardActivity extends Activity implements Naviga
         if (getTitleResId() != -1) {
             final CharSequence headerText = TextUtils.expandTemplate(getText(getTitleResId()));
             getGlifLayout().setHeaderText(headerText);
+            //getGlifLayout().setHeaderColor(R.color.title_text);
         }
         if (getIconResId() != -1) {
             final GlifLayout layout = getGlifLayout();
