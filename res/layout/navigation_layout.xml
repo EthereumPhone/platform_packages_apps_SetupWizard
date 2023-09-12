@@ -35,6 +35,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:text="@string/next"
-        style="@style/SudGlifButton.Primary" />
+        style="@style/ethOSButton" />
 
 </RelativeLayout>

@@ -58,6 +58,13 @@
         <item name="android:fontFamily">@font/inter_semibold_font</item>
     </style>
 
+    <style name="ethOSTransparentButton">
+        <item name="android:background">@drawable/abc_btn_borderless_material</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:fontFamily">@font/inter_semibold_font"</item>
+    </style>
+
 
     <style name="ethOSButton">
         <item name="android:layout_width">fill_parent</item>
