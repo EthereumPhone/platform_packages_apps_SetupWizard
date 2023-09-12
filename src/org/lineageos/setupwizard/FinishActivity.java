@@ -104,7 +104,6 @@ public class FinishActivity extends BaseSetupWizardActivity {
             @Override
             public void run() {
                 setRandomWallpaperFromAssets(context);
-                enableDarkMode(context);
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -188,10 +187,6 @@ public class FinishActivity extends BaseSetupWizardActivity {
         }
     }
 
-    private void enableDarkMode(Context context) {
-        UiModeManager mUiModeManager = context.getSystemService(UiModeManager.class);
-        mUiModeManager.setNightModeActivated(true);
-    }
 
     private void disableDarkMode(Context context) {
         UiModeManager mUiModeManager = context.getSystemService(UiModeManager.class);
@@ -263,10 +258,6 @@ public class FinishActivity extends BaseSetupWizardActivity {
         SetupWizardUtils.enableStatusBar(this);
         Intent intent = WizardManagerHelper.getNextIntent(getIntent(),
                 Activity.RESULT_OK);
-        UiModeManager uiModeManager = (UiModeManager) this.getSystemService(Context.UI_MODE_SERVICE);
-        if (uiModeManager != null) {
-                uiModeManager.setNightMode(UiModeManager.MODE_NIGHT_YES);
-        }
         startActivityForResult(intent, NEXT_REQUEST);
     }
 

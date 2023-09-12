@@ -23,6 +23,9 @@ import android.view.View;
 import android.view.Display;
 import android.hardware.display.DisplayManager;
 import android.provider.Settings;
+import android.app.UiModeManager;
+
+import android.content.Context;
 
 import com.google.android.setupcompat.util.SystemBarHelper;
 
@@ -60,6 +63,7 @@ public class WelcomeActivity extends BaseSetupWizardActivity {
                 .setOnClickListener(view -> startEmergencyDialer());
         findViewById(R.id.launch_accessibility)
                 .setOnClickListener(view -> startAccessibilitySettings());
+        enableDarkMode(this);
     }
 
     float findPeakRefreshRate(Display.Mode[] modes) {
@@ -70,6 +74,11 @@ public class WelcomeActivity extends BaseSetupWizardActivity {
             }
         }
         return peakRefreshRate;
+    }
+
+    private void enableDarkMode(Context context) {
+        UiModeManager mUiModeManager = context.getSystemService(UiModeManager.class);
+        mUiModeManager.setNightModeActivated(true);
     }
 
     @Override

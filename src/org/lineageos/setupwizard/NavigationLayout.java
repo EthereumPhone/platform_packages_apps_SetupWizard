@@ -43,6 +43,7 @@ public class NavigationLayout extends RelativeLayout {
         mNextButton = findViewById(R.id.navbar_next);
         mSkipButton = findViewById(R.id.navbar_skip);
 
+        mSkipButton.setTextColor(getResources().getColor(R.color.white));
         TypedArray a = context.getTheme().obtainStyledAttributes(
              attrs, R.styleable.NavigationLayout, 0, 0);
         final boolean showSkipButton;

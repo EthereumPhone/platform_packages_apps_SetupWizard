@@ -58,6 +58,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/enable_mobile_data_summary"
+                        android:textColor="@color/white"
                         style="@style/SudDescription.Glif" />
 
                     <include layout="@layout/divider" />
@@ -84,6 +85,7 @@
                             android:layout_width="0px"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:textColor="@color/white"
                             android:textSize="14sp"
                             android:layout_marginLeft="@dimen/carrier_text_margin_left"
                             android:text="@string/setup_mobile_data_no_service"

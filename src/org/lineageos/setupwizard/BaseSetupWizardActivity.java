@@ -18,6 +18,7 @@
 package org.lineageos.setupwizard;
 
 import static android.view.View.INVISIBLE;
+import static android.view.View.VISIBLE;
 
 import static com.google.android.setupcompat.util.ResultCodes.RESULT_ACTIVITY_NOT_FOUND;
 import static com.google.android.setupcompat.util.ResultCodes.RESULT_RETRY;
@@ -61,6 +62,9 @@ import com.google.android.setupdesign.GlifLayout;
 
 import org.lineageos.setupwizard.NavigationLayout.NavigationBarListener;
 import org.lineageos.setupwizard.util.SetupWizardUtils;
+
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 
 import java.util.List;
 
@@ -258,6 +262,20 @@ public abstract class BaseSetupWizardActivity extends Activity implements Naviga
             final Button next = mNavigationBar.getNextButton();
             next.startAnimation(fadeOut);
             next.setVisibility(INVISIBLE);
+        }
+    }
+
+    protected void makeNextButtonInvisible() {
+        if (mNavigationBar != null) {
+            final Button next = mNavigationBar.getNextButton();
+            next.setVisibility(INVISIBLE);
+        }
+    }
+
+    protected void makeNextButtonVisible() {
+        if (mNavigationBar != null) {
+            final Button next = mNavigationBar.getNextButton();
+            next.setVisibility(VISIBLE);
         }
     }
 
@@ -648,11 +666,13 @@ public abstract class BaseSetupWizardActivity extends Activity implements Naviga
         if (getTitleResId() != -1) {
             final CharSequence headerText = TextUtils.expandTemplate(getText(getTitleResId()));
             getGlifLayout().setHeaderText(headerText);
+            ColorStateList white = ColorStateList.valueOf(Color.WHITE);
+            getGlifLayout().setHeaderColor(white);
         }
         if (getIconResId() != -1) {
             final GlifLayout layout = getGlifLayout();
             final Drawable icon = getDrawable(getIconResId()).mutate();
-            icon.setTintList(Utils.getColorAccent(layout.getContext()));
+            //icon.setTintList(Utils.getColorAccent(layout.getContext()));
             layout.setIcon(icon);
         }
     }
