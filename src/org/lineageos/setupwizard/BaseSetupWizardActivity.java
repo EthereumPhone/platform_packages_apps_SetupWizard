@@ -121,6 +121,8 @@ public abstract class BaseSetupWizardActivity extends Activity implements Naviga
         if (mNavigationBar != null) {
             mNavigationBar.setNavigationBarListener(this);
         }
+
+        FontHelper.applyFontToView(getWindow().getDecorView().getRootView(), FontHelper.loadFontFromAssets(this, "inter_semibold.ttf"));
     }
 
     @Override
