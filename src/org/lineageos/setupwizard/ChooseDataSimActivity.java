@@ -41,6 +41,7 @@ import org.lineageos.setupwizard.util.PhoneMonitor;
 import org.lineageos.setupwizard.util.SetupWizardUtils;
 
 import java.util.List;
+import android.graphics.Color;
 
 public class ChooseDataSimActivity extends BaseSetupWizardActivity {
 
@@ -384,6 +385,7 @@ public class ChooseDataSimActivity extends BaseSetupWizardActivity {
             String formattedName =
                     getString(R.string.data_sim_name,
                             slot + 1, name);
+            mNameViews.get(slot).setTextColor(Color.WHITE);
             mNameViews.get(slot).setText(formattedName);
         }
     }

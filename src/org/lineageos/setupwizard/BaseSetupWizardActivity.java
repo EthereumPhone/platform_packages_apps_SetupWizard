@@ -65,6 +65,8 @@ import org.lineageos.setupwizard.util.SetupWizardUtils;
 
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.PorterDuff;
 
 import java.util.List;
 
@@ -674,7 +676,7 @@ public abstract class BaseSetupWizardActivity extends Activity implements Naviga
         if (getIconResId() != -1) {
             final GlifLayout layout = getGlifLayout();
             final Drawable icon = getDrawable(getIconResId()).mutate();
-            //icon.setTintList(Utils.getColorAccent(layout.getContext()));
+            icon.setColorFilter(new PorterDuffColorFilter(Color.WHITE, PorterDuff.Mode.SRC_IN));
             layout.setIcon(icon);
         }
     }

@@ -23,6 +23,8 @@
     <string name="lineage_wizard_script_user_uri" translatable="false">android.resource://org.lineageos.setupwizard/raw/lineage_wizard_script_user</string>
 
     <string name="or_text">or</string>
+    <string name="wallet_backup_text">Please make sure to backup your private key, which can be found in Settings under Security.</string>
+     <string name="wallet_backup_title">Backup ethOS wallet</string>
     <string name="generate_wallet_button">Generate new wallet</string>
     <string name="activity_label_empty" />
 

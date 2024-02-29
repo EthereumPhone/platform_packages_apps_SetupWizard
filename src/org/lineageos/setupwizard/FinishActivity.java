@@ -167,7 +167,7 @@ public class FinishActivity extends BaseSetupWizardActivity {
             // Get a random image from the assets folder
             Random random = new Random();
             int imageNumber = random.nextInt(10);
-            String imageName = "image" + imageNumber + ".png";
+            String imageName = "image" + imageNumber + ".jpg";
             AssetManager am = context.getAssets();
 
             inputStream = am.open(imageName);

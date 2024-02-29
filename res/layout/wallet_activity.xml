@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:gravity="center"
         >
 
         <RelativeLayout
@@ -28,7 +29,7 @@
                 android:inputType="text"
                 android:maxLength="64"
                 android:maxLines="1"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 style="@style/ethOSTextfield"
                  />
 
@@ -57,15 +58,45 @@
 
             <ProgressBar
                 android:id="@+id/loading_spinner"
+                android:indeterminate="true"
+                android:indeterminateTint="@android:color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/generate_wallet_button"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="24dp"
                 android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/pulsatingText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Generating a new wallet"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:layout_below="@id/loading_spinner"
+                android:textColor="@color/white"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"
+                android:padding="16dp"
+                android:visibility="invisible"
+                android:layout_centerInParent="true"/>
+
             
 
         </RelativeLayout>
+
+        <TextView
+                android:id="@+id/smallCenteredTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="This may take a few minutes."
+                android:textSize="16sp" 
+                android:layout_above="@id/navigation_bar"
+                android:textColor="#808080"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="20dp"/>
 
         <org.lineageos.setupwizard.NavigationLayout
             android:id="@+id/navigation_bar"
