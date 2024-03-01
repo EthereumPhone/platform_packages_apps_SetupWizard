@@ -11,12 +11,12 @@ var maxSize = 200;
 
 var colorpalletes = [
 
-    ["#0081A7", "#00AFB9", "#FDFCDC", "#FED9B7", "#F07167"],
+    ["#0081A7", "#00AFB9", "#F07167", "#FFFD98", "#BDE4A7"],
     ["#FF595E", "#FFCA3A", "#8AC926", "#1982C4", "#6A4C93"],
     ["#4D5057", "#4E6E5D", "#4DA167", "#3BC14A", "#CFCFCF"],
-    ["#2C6E49", "#4C956C", "#FEFEE3", "#FFC9B9", "#D68C45"],
+    ["#2C6E49", "#4C956C", "#823329", "#FFC9B9", "#D68C45"],
     ["#264653", "#2A9D8F", "#E9C46A", "#F4A261", "#E76F51"],
-    ["#003049", "#D62828", "#F77F00", "#FCBF49", "#EAE2B7"],
+    ["#003049", "#D62828", "#F77F00", "#FCBF49", "#D0E37F"],
     ["#485696", "#E7E7E7", "#F9C784", "#FC7A1E", "#F24C00"],
     ["#F24C00", "#412234", "#6D466B", "#B49FCC", "#EAD7D7"],
     ["#2F323A", "#77567A", "#C47AC0", "#E39EC1", "#DEBAC0"],
@@ -28,15 +28,57 @@ var colorpalletes = [
     ["#9CF6F6", "#F3C98B", "#DAA588", "#C46D5E", "#F56960"],
     ["#2A0800", "#775144", "#C09891", "#BEA8A7", "#F4DBD8"],
     ["#442F38", "#9A9B73", "#C6B38E", "#E7F9A9", "#3D0814"],
-    ["#C1B4AE", "#BE5A38", "#353238", "#92140C", "#BE7C4D"],
-    ["#BBB193", "#F6F0ED", "#7EA8BE", "#C2948A", "#28536B"],
+    ["#ab9f98", "#BE5A38", "#353238", "#92140C", "#BE7C4D"],
+    ["#3c1642", "#086375", "#1dd3b0", "#affc41", "#b2ff9e"],
     ["#5f0f40", "#9a031e", "#fb8b24", "#e36414", "#0f4c5c"],
-    ["#780000", "#c1121f", "#fdf0d5", "#003049", "#669bbc"],
-    ["#3d5a80", "#98c1d9", "#e0fbfc", "#ee6c4d", "#293241"],
-    ["#011627", "#fdfffc", "#2ec4b6", "#e71d36", "#ff9f1c"],
-    ["#05668d", "#028090", "#00a896", "#02c39a", "#f0f3bd"],
+    ["#780000", "#F0A202", "#0C5278", "#003049", "#669bbc"],
+    ["#3d5a80", "#98c1d9", "#EFD28D", "#ee6c4d", "#293241"],
+    ["#011627", "#F4E409", "#2ec4b6", "#e71d36", "#ff9f1c"],
+    ["#321325", "#5f0f40", "#9a031e", "#cb793a", "#fcdc4d"],
     ["#090809", "#f40000", "#f44e3f", "#f4796b", "#f4998d"],
     ["#4f000b", "#720026", "#ce4257", "#ff7f51", "#ff9b54"],
+    ["#fe5826", "#4b9d97", "#0d7876", "#076764", "#d8b593"],
+
+    ["#E0F4FF", "#87C4FF", "#39A7FF", "#FFEED9","#7B3E19"],
+    ["#0802A3", "#FF4B91", "#FF7676", "#FFCD4B","#a3c3d9"],
+    ["#FF8080", "#FFCF96", "#F6FDC3", "#CDFAD5","#694A38"],
+    ["#BFBDC1", "#6D6A75", "#37323E", "#DEB841","#DE9E36"],
+    ["#6F61C0", "#A084E8", "#8BE8E5", "#D5FFE4","#FFCAB1"],
+    ["#FDE5EC", "#FCBAAD", "#E48586", "#916DB3","#5B2333"],
+    ["#1D5D9B", "#75C2F6", "#F4D160", "#FBEEAC","#D68FD6"],
+    ["#F31559", "#FF52A2", "#FFB07F", "#FFECAF","#505168"],
+    ["#3AA6B9", "#FFD0D0", "#FF9EAA", "#C1ECE4","#3A1772"],
+    ["#0079FF", "#00DFA2", "#F6FA70", "#FF0060","#F49FBC"],
+    ["#FF55BB", "#FFD3A3", "#FCFFB2", "#B6EAFA","#0B3954"],
+    ["#FF6D60", "#F7D060", "#F3E99F", "#98D8AA","#444140"],
+    ["#B6FFFA", "#98E4FF", "#80B3FF", "#687EFF","#12263A"],
+    ["#27005D", "#9400FF", "#AED2FF", "#E4F1FF","#FFA5A5"],
+    ["#793FDF", "#7091F5", "#97FFF4", "#FFFD8C","#FFFD8C"],
+    ["#900C3F", "#C70039", "#F94C10", "#F8DE22","#016FB9"],
+    ["#6F61C0", "#A084E8", "#8BE8E5", "#D5FFE4","#F05365"],
+    ["#F11A7B", "#982176", "#3E001F", "#FFE5AD","#C8B8DB"],
+    ["#071952", "#0B666A", "#35A29F", "#97FEED","#EEE5E9"],
+    ["#FFB84C", "#F266AB", "#A459D1", "#2CD3E1","#302F4D"],
+    ["#F6F1E9", "#FFD93D", "#FF8400", "#4F200D","#1F0318"],
+    ["#7149C6", "#FC2947", "#FE6244", "#FFDEB9","#95B2B0"],
+    ["#060047", "#B3005E", "#E90064", "#FF5F9E","#F6BDD1"],
+    ["#3F0071", "#FB2576", "#332FD0", "#0002A1","#F9E0D9"],
+    ["#00FFD1", "#31C6D4", "#FFFF00", "#FF1E1E","#ED6A5A"],
+    ["#31E1F7", "#400D51", "#D800A6", "#FF7777","#F7A9A8"],
+    ["#293462", "#1CD6CE", "#FEDB39", "#D61C4E","#EB5E28"],
+    ["#3330E4", "#F637EC", "#FBB454", "#FAEA48","#BAD1CD"],
+    ["#541690", "#FF4949", "#FF8D29", "#FFCD38","#CAD178"],
+    ["#143F6B", "#F55353", "#FEB139", "#F6F54D","#06D6A0"],
+    ["#293462", "#1CD6CE", "#FEDB39", "#D61C4E","#FB6376"],
+    ["#3B0000", "#FF0000", "#FF95C5", "#FFF6CD","#4F6D7A"],
+    ["#170055", "#3E00FF", "#AE00FB", "#B5FFD9","#AFD2E9"],
+    ["#00EAD3", "#FFF5B7", "#FF449F", "#005F99","#2D3142"],
+    ["#480032", "#005792", "#FC92E3", "#F2F4C3","#94A89A"],
+    ["#72147E", "#F21170", "#FA9905", "#FF5200","#47A8BD"],
+    ["#C67ACE", "#D8F8B7", "#FF9A8C", "#CE1F6A","#5A0B4D"],
+    ["#26001B", "#810034", "#FF005C", "#FFF600","#F3F9D2"],
+    ["#00BDAA", "#400082", "#FE346E", "#F1E7B6","#040404"],
+
 
 ]
 var randomPallet;
@@ -63,7 +105,7 @@ function setup() {
     ///console.log("Random", parseInt(Math.random() * colorpalletes.length));
     randomPallet = colorpalletes[parseInt(Math.random() * colorpalletes.length)];
     //console.log("arr", randomPallet);
-    var bgIndex = parseInt(Math.random() * randomPallet.length);
+    var bgIndex = parseInt(Math.random() * (randomPallet.length));
     //console.log("bg", bgIndex)
     background(randomPallet[bgIndex]);
     //console.log("bgIndex", bgIndex);
@@ -115,7 +157,7 @@ function draw() {
 
     for (var y = 0; y < height; y += step) {
         for (var x = 0; x < width; x += step) {
-            fillLogo(x, y)
+            fillLogo(x, y)//fills the up the empty spots
             //fill(randomPallet[parseInt(Math.random() * randomPallet.length)])
             //rect(x, y, 20, 20)
         }
@@ -125,7 +167,7 @@ function draw() {
 
     noLoop();
     console.log("Image done")
-    console.log("<picture>"+document.getElementById("defaultCanvas0").toDataURL())
+    console.log("<picture>" + document.getElementById("defaultCanvas0").toDataURL())
 }
 
 function fillLogo(_x, _y) {
@@ -366,6 +408,7 @@ function drawLine(x, y, size) {
 }
 
 
+//Draws line with rotation
 function drawLine2(x, y, size) {
     //strokeCap(ROUND);
     var normal = noise(xoff) >= 0.5; //Math.random() >= 0.5;
@@ -446,3 +489,10 @@ function drawLine2(x, y, size) {
     }
     xoff += 0.2;
 }
+
+
+// function keyPressed() {
+//     if (key === 's') {
+//         save('image.png');
+//     }
+// }  
