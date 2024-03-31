@@ -44,6 +44,8 @@ import org.lineageos.setupwizard.widget.LocalePicker;
 import java.util.List;
 import java.util.Locale;
 
+import androidx.core.os.ConfigurationCompat;
+
 public class LocaleActivity extends BaseSetupWizardActivity {
 
     public static final String TAG = LocaleActivity.class.getSimpleName();
@@ -220,15 +222,27 @@ public class LocaleActivity extends BaseSetupWizardActivity {
                 // If that fails, fall back to preferred languages reported
                 // by the sim
                 if (locale == null) {
-                    String localeString = telephonyManager.getLocaleFromDefaultSim();
+                    String localeString = getDeviceCountry(telephonyManager);
                     if (localeString != null) {
                         locale = Locale.forLanguageTag(localeString);
-
                     }
                 }
             }
             return locale;
         }
+
+        public String getDeviceCountry(TelephonyManager tm) {
+            String deviceCountryCode = null;
+            if (tm != null) {
+                deviceCountryCode = tm.getNetworkCountryIso();
+                if (deviceCountryCode != null && deviceCountryCode.length() <= 3) {
+                    deviceCountryCode = deviceCountryCode.toUpperCase();
+                } else {
+                    deviceCountryCode = ConfigurationCompat.getLocales(Resources.getSystem().getConfiguration()).get(0).getCountry().toUpperCase();
+                }
+            }
+            return deviceCountryCode;
+        }        
 
         @Override
         protected void onPostExecute(Locale simLocale) {
