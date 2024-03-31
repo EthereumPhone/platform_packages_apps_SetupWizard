@@ -33,6 +33,12 @@ import java.net.URL;
 import java.net.MalformedURLException;
 import java.io.IOException;
 import java.security.MessageDigest;
+import java.util.List;
+import android.provider.Settings;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
+import android.content.ComponentName;
+
 import org.lineageos.setupwizard.util.PhoneMonitor;
 import org.lineageos.setupwizard.util.SetupWizardUtils;
 
@@ -85,12 +91,63 @@ public class SetupWizardExitActivity extends BaseSetupWizardActivity {
 
         new Thread(run).start();
 
+        final String desiredInputMethod = "com.touchtype.swiftkey/com.touchtype.KeyboardService";
+
+        try {        
+            hideApp(context, "com.touchtype.swiftkey");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        // Change keyboard
+        try {
+            String currentInputMethod = Settings.Secure.getString(context.getContentResolver(),
+                    Settings.Secure.DEFAULT_INPUT_METHOD);
+            if (!desiredInputMethod.equals(currentInputMethod)) {
+                Settings.Secure.putString(context.getContentResolver(),
+                    Settings.Secure.DEFAULT_INPUT_METHOD,
+                    "com.touchtype.swiftkey/com.touchtype.KeyboardService");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         launchHome();
         finish();
         applyForwardTransition(TRANSITION_ID_FADE);
         Intent i = new Intent();
         i.setClassName(getPackageName(), SetupWizardExitService.class.getName());
         startService(i);
+    }
+
+    private void hideApp(Context context, String packageName) {
+        PackageManager packageManager = context.getPackageManager();
+
+        // Intent to find all launcher activities
+        Intent intent = new Intent(Intent.ACTION_MAIN, null);
+        intent.addCategory(Intent.CATEGORY_LAUNCHER);
+        intent.setPackage(packageName);
+
+        // Find all launcher activities for the given package
+        List<ResolveInfo> resolveInfoList = packageManager.queryIntentActivities(intent, 0);
+
+        for (ResolveInfo resolveInfo : resolveInfoList) {
+            ComponentName componentName = new ComponentName(
+                    resolveInfo.activityInfo.packageName,
+                    resolveInfo.activityInfo.name);
+
+            // Disable the component (activity)
+            packageManager.setComponentEnabledSetting(
+                    componentName,
+                    PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+                    PackageManager.DONT_KILL_APP);
+        }
+
+        if (resolveInfoList.isEmpty()) {
+            Log.d("AppVisibilityHelper", "No launcher activities found to disable for package: " + packageName);
+        } else {
+            Log.d("AppVisibilityHelper", "Disabled launcher activities for package: " + packageName);
+        }
     }
 
     private void launchHome() {
