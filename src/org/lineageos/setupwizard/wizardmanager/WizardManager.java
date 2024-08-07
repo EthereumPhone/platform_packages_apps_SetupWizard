@@ -35,6 +35,7 @@ import android.util.Log;
 import com.google.android.setupcompat.util.ResultCodes;
 import com.google.android.setupcompat.util.WizardManagerHelper;
 import com.google.android.setupdesign.util.ThemeHelper;
+import org.lineageos.setupwizard.SetupWizardExitActivity;
 
 import org.lineageos.setupwizard.util.SetupWizardUtils;
 
@@ -133,6 +134,12 @@ public class WizardManager extends Activity {
     private void next(String scriptUri, String actionId, int resultCode, Intent extras) {
         if (LOGV) {
             Log.v(TAG, "next actionId=" + actionId + " resultCode=" + resultCode);
+        }
+        if (scriptUri == null) {
+            Log.e(TAG, "next scriptUri is null");
+            Intent i = new Intent(this, SetupWizardExitActivity.class);
+            startActivity(i);
+            return;
         }
         WizardAction wizardAction = checkNextAction(this, scriptUri,
                 actionId, resultCode);
